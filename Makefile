@@ -2,12 +2,12 @@ default: all
 
 LIBDIR=lib
 
-LINK_LIST_DIR=link_list
-JSON_DIR=json
-BSON_DIR=bson
-HASH_DIR=hash
+LINK_LIST_DIR=data_struct/link_list
+JSON_DIR=data_struct/json
+BSON_DIR=data_struct/bson
+HASH_DIR=data_struct/hash
 
-SAMPLE_DIR=sample
+SAMPLE_DIR=test_case
 
 COPTS := -Wall -Werror
 DEFINES := -Dpathing
@@ -65,6 +65,7 @@ clean:
 	$(RM) $(LINK_LIST_DIR)/*.o
 	$(RM) $(HASH_DIR)/*.o
 	$(RM) $(SAMPLE_DIR)/*.o
+	$(RM) *.o
 	$(RM) $(LIB)
 	$(RM) $(EXE)
 
