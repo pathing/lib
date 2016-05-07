@@ -15,8 +15,6 @@ link_list_append();
 
 link_list_find();
 
-link_list_find();
-
 link_list_delete();
 
 link_list_show_one();
