@@ -14,7 +14,7 @@ define DOUBLE_LINK_LIST to 1 to enable double link list, support the API below:
 5. link_list_show_one();
 6. link_list_show_all();
 
-see [test_link_list](https://github.com/pathing/lib/blob/master/data_struct/test_link_list.c) for sample
+see [test_link_list](https://github.com/pathing/lib/blob/master/test_case/test_link_list.c) for sample
 
 ## json
 TODO
