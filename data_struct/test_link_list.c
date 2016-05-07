@@ -74,7 +74,8 @@ void test_link_list(void)
         link_list_append(&head, &data1);
     }
     link_list_show_all(&head, print_cb);
-
+    printf("--------------------------------------------------------------------\n");
+    
     for(i = 0; i < 10; i++){
         link_list_delete(&head, data1.name);
         link_list_show_all(&head, print_cb);
