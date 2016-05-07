@@ -6,13 +6,14 @@ LINK_LIST_DIR=data_struct/link_list
 JSON_DIR=data_struct/json
 BSON_DIR=data_struct/bson
 HASH_DIR=data_struct/hash
+COMMON_DIR=common
 
 SAMPLE_DIR=test_case
 
 COPTS := -Wall -Werror
 DEFINES := -Dpathing
 INCLUDES := -I$(LINK_LIST_DIR) -I$(JSON_DIR)  \
-			-I$(BSON_DIR) -I$(BSON_DIR) -I$(BSON_DIR)
+			-I$(BSON_DIR) -I$(BSON_DIR) -I$(BSON_DIR) -I$(COMMON_DIR)
 
 
 
@@ -28,6 +29,7 @@ CSRCS += $(wildcard $(JSON_DIR)/*.c)
 CSRCS += $(wildcard $(BSON_DIR)/*.c)
 CSRCS += $(wildcard $(HASH_DIR)/*.c)
 CSRCS += $(wildcard $(SAMPLE_DIR)/*.c)
+CSRCS += $(wildcard $(COMMON_DIR)/*.c)
 OBJS := $(CSRCS:%.c=%.o)
 DEPS := $(CSRCS:%.c=%.d)
 LIBS :=
@@ -65,6 +67,7 @@ clean:
 	$(RM) $(LINK_LIST_DIR)/*.o
 	$(RM) $(HASH_DIR)/*.o
 	$(RM) $(SAMPLE_DIR)/*.o
+	$(RM) $(COMMON_DIR)/*.o
 	$(RM) *.o
 	$(RM) $(LIB)
 	$(RM) $(EXE)
