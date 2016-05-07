@@ -68,18 +68,20 @@ void test_link_list(void)
     printf("--------------------------------------------------------------------\n");
     printf("Show all. expect [%s:%d], result ", data1.name, data1.age);
     link_list_show_all(&head, print_cb);
-    printf("--------------------------------------------------------------------\n");
 
     for(i = 0; i < 10; i++){
         link_list_append(&head, &data1);
     }
-    link_list_show_all(&head, print_cb);
     printf("--------------------------------------------------------------------\n");
-    
+    printf("Append ten, show all. expect [%s:%d] 11 times, result\n", data1.name, data1.age);
+    link_list_show_all(&head, print_cb);
+
     for(i = 0; i < 10; i++){
         link_list_delete(&head, data1.name);
+        printf("--------------------------------------------------------------------\n");
+        printf("Delete one, show all. expect [%s:%d] %d times, result\n", data1.name, data1.age, 10 - i);
         link_list_show_all(&head, print_cb);
-    printf("--------------------------------------------------------------------\n");
     }
+    printf("--------------------------------------------------------------------\n");
 }
 

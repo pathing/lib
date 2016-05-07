@@ -2,9 +2,18 @@ default: all
 
 LIBDIR=lib
 
+LINK_LIST_DIR=link_list
+JSON_DIR=json
+BSON_DIR=bson
+HASH_DIR=hash
+
+SAMPLE_DIR=sample
+
 COPTS := -Wall -Werror
-DEFINES := -Dwubo
-INCLUDES := -I/mnt/d/test/data_struct
+DEFINES := -Dpathing
+INCLUDES := -I$(LINK_LIST_DIR) -I$(JSON_DIR)  \
+			-I$(BSON_DIR) -I$(BSON_DIR) -I$(BSON_DIR)
+
 
 
 CFLAGS = $(COPTS) $(DEFINES) $(INCLUDES)
@@ -14,6 +23,11 @@ AR = ar
 RM = rm -f
 
 CSRCS := $(wildcard *.c)
+CSRCS += $(wildcard $(LINK_LIST_DIR)/*.c)
+CSRCS += $(wildcard $(JSON_DIR)/*.c)
+CSRCS += $(wildcard $(BSON_DIR)/*.c)
+CSRCS += $(wildcard $(HASH_DIR)/*.c)
+CSRCS += $(wildcard $(SAMPLE_DIR)/*.c)
 OBJS := $(CSRCS:%.c=%.o)
 DEPS := $(CSRCS:%.c=%.d)
 LIBS :=
@@ -46,8 +60,13 @@ all: $(OBJS) $(EXE)
 
 clean:
 	$(foreach d, $(SUBDIRS), make -C $(d) clean;)
-	$(RM) *.o
+	$(RM) $(JSON_DIR)/*.o
+	$(RM) $(BSON_DIR)/*.o
+	$(RM) $(LINK_LIST_DIR)/*.o
+	$(RM) $(HASH_DIR)/*.o
+	$(RM) $(SAMPLE_DIR)/*.o
 	$(RM) $(LIB)
+	$(RM) $(EXE)
 
 
 mkdbg:
