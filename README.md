@@ -5,7 +5,7 @@
 # data_struct
 
 ## link_list
-support *generic* *single* link list and *double* link list
+support **generic** **single** link list and **double** link list
 
 define DOUBLE_LINK_LIST to 1 to enable double link list, 
 
@@ -23,7 +23,7 @@ link_list_show_one();
 
 link_list_show_all();
 
-see test_link_list for sample
+see [test_link_list](https://github.com/pathing/lib/blob/master/data_struct/test_link_list.c) for sample
 
 ## json
 TODO
