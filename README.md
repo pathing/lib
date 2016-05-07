@@ -1,5 +1,3 @@
-# lib
-
 # This is my library
 
 # data_struct
